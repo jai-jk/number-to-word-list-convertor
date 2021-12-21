@@ -23,7 +23,6 @@ export default function T9Form() {
 
   return (
     <div>
-      <h1>T9 Number to Word List Convertor</h1>
       <form onSubmit={handleSubmit}>
         <OutlinedInput
           name='inputNumber'
@@ -61,7 +60,7 @@ export default function T9Form() {
           Convert
           <TranslateIcon style={{ marginLeft: '2%' }} />
         </Button>
-        <p>{output}</p>
+        <p style={{ color: 'black' }}>© Jai Jalah 2021</p>
       </form>
     </div>
   );
