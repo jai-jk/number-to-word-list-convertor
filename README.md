@@ -4,6 +4,10 @@
 
 React, Redux and Node app - converts a given numeric string into a list of corresponding words in the style of [T9](<https://en.wikipe.ia.org/wiki/T9_(predictive_text)>) / [Phonewords](https://en.wikipedia.org/wiki/Phoneword).
 
+## Demo
+
+...
+
 ### Why and How
 
 My goals for this project are to practise and demonstrate my abilities as a Full Stack Node.js & TypeScript Engineer. I will do this by doing the following:
