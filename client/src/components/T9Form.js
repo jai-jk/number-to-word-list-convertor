@@ -1,46 +1,24 @@
-import React, { useReducer } from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 import '../App.css';
 import { OutlinedInput, Button } from '@mui/material';
 import TranslateIcon from '@mui/icons-material/Translate';
 
 export default function T9Form() {
-  const [data, setData] = React.useState(null);
+  const [input, setInput] = useState('');
+  const [output, setOutput] = useState('hello');
 
-  React.useEffect(() => {
-    fetch('/api')
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-  const [formInput, setFormInput] = useReducer(
-    (state, newState) => ({ ...state, ...newState }),
-    {
-      name: '',
-      email: '',
-    }
-  );
+    const inputNumber = { input };
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-
-    let data = { formInput };
-
-    fetch('/data', {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => response.json())
-      .then((response) => console.log('Success:', JSON.stringify(response)))
-      .catch((error) => console.error('Error:', error));
-  };
-
-  const handleInput = (evt) => {
-    const name = evt.target.name;
-    const newValue = evt.target.value;
-    setFormInput({ [name]: newValue });
+    axios
+      .post('http://localhost:3001/newData', inputNumber)
+      .then((response) => console.log(response.data))
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
   return (
@@ -48,8 +26,8 @@ export default function T9Form() {
       <h1>T9 Number to Word List Convertor</h1>
       <form onSubmit={handleSubmit}>
         <OutlinedInput
+          name='inputNumber'
           type='number'
-          placeholder='Enter your number to convert!'
           className='text-field'
           required='true'
           inputProps={{
@@ -62,7 +40,9 @@ export default function T9Form() {
               fontWeight: 'bold',
             },
           }}
-          onChange={handleInput}
+          value={input}
+          placeholder='Enter your number to convert!'
+          onChange={(event) => setInput(event.target.value)}
         />
         <br></br>
         <Button
@@ -81,6 +61,7 @@ export default function T9Form() {
           Convert
           <TranslateIcon style={{ marginLeft: '2%' }} />
         </Button>
+        <p>{output}</p>
       </form>
     </div>
   );
