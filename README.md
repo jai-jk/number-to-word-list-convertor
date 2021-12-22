@@ -9,6 +9,8 @@ React, Express and Node app - converts a given numeric string into a list of cor
 ![Translat9r Demo](translat9r-demo-gif.gif) <br>
 https://vimeo.com/659245138
 
+**Developed and optimised for a 1440 \* 700 screen - was unable to optimise for multiple sizes before the deadline.**
+
 ### Why and How
 
 My goals for this project were to practise and demonstrate my abilities as a Full Stack Node.js & React Engineer. I did this by attempting to do the following:
@@ -41,7 +43,7 @@ To run locally:
 
 ## Improvements I would have loved to make if I'd had more time
 
-- A More accessible and generally improved UI and UX - scalability for multiple screen sizes, ease of use for all types of users, improvements to the modal-close/refresh functionality, definitely refactoring of css and styles into external sheets wherever possible etc.
+- A More accessible and generally improved UI and UX - scalability for multiple screen sizes (with ems and rems, breakpoints & media queries, etc); ease of use for all types of users; improvements to the modal-close/refresh functionality (colours, design, fluidity and functionality); refactoring of css and styles into external sheets wherever possible, etc.
 - A functioning keyboard on the brick phone - what a missed opportunity, argh!!
 - Deployment to Heroku - just couldn't get it working in time =(.
 - Unit, Functional, Feature and E2E Tests with Jest and Cypress (TDD from the start would have been even better).
