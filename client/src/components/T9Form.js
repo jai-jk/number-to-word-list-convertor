@@ -28,7 +28,7 @@ export default function T9Form() {
           name='inputNumber'
           type='number'
           className='text-field'
-          required='true'
+          required={true}
           inputProps={{
             style: {
               width: '900px',
