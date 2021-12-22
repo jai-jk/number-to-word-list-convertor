@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+
 import '../App.css';
+import { ResultsModal } from './ResultsModal';
+
 import { OutlinedInput, Button } from '@mui/material';
 import TranslateIcon from '@mui/icons-material/Translate';
 
-export default function T9Form() {
+export const T9Form = () => {
   const [input, setInput] = useState('');
-  const [output, setOutput] = useState('hello');
+  const [result, setResult] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,7 +18,7 @@ export default function T9Form() {
 
     axios
       .post('/numberSubmitted', inputNumber)
-      .then((response) => console.log(response.data))
+      .then((response) => setResult(response.data))
       .catch((err) => {
         console.error(err);
       });
@@ -60,7 +63,8 @@ export default function T9Form() {
           Convert
           <TranslateIcon style={{ marginLeft: '2%' }} />
         </Button>
+        {result === null ? null : <ResultsModal data={result} />}
       </form>
     </div>
   );
-}
+};

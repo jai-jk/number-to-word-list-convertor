@@ -3,19 +3,19 @@
   "name": "TranslaT9r",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "81x256",
+      "src": "icon.svg",
+      "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "favicon.ico",
+      "src": "icon.svg",
       "type": "image/png",
-      "sizes": "81x256"
+      "sizes": "192x192"
     },
     {
-      "src": "favicon.ico",
+      "src": "icon.svg",
       "type": "image/png",
-      "sizes": "81x256"
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",
