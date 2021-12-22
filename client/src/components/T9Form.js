@@ -14,7 +14,7 @@ export default function T9Form() {
     const inputNumber = { input };
 
     axios
-      .post('http://localhost:3001/newData', inputNumber)
+      .post('/numberSubmitted', inputNumber)
       .then((response) => console.log(response.data))
       .catch((err) => {
         console.error(err);
@@ -60,7 +60,6 @@ export default function T9Form() {
           Convert
           <TranslateIcon style={{ marginLeft: '2%' }} />
         </Button>
-        <p style={{ color: 'black' }}>© Jai Jalah 2021</p>
       </form>
     </div>
   );

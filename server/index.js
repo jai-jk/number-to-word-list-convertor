@@ -2,10 +2,13 @@ const express = require('express');
 const logger = require('morgan');
 const cors = require('cors');
 const path = require('path');
+const dictionaryModule = require('../util/dictionary');
 
 const PORT = process.env.port || 3001;
 
 const app = express();
+
+const dictionary = dictionaryModule.dictionaryArray;
 
 // app.use(express.static(path.resolve(__dirname, 'client/build')));
 
@@ -25,11 +28,12 @@ app.get('/results', (req, res) => {
   res.json({ message: 'results go here' });
 });
 
-app.post('/newData', function (req, res) {
+app.post('/numberSubmitted', function (req, res) {
   const inputNumber = req.body.input;
   const inputArray = Array.from(inputNumber.toString()).map(Number);
 
-  const convertedWords = [];
+  const actualWords = [];
+  const nonWords = [];
 
   const hashTable = [
     ' ',
@@ -44,11 +48,15 @@ app.post('/newData', function (req, res) {
     'wxyz',
   ];
 
-  const words = ['jai', 'hi'];
-
   const convertNumToWords = (inputArray, currIndex, convertedWord) => {
     if (currIndex === inputArray.length) {
-      convertedWords.push(convertedWord.join(''));
+      const newWord = convertedWord.join('');
+
+      if (dictionary.includes(newWord)) {
+        actualWords.push(newWord);
+      } else {
+        nonWords.push(newWord);
+      }
       return;
     }
 
@@ -70,7 +78,7 @@ app.post('/newData', function (req, res) {
 
   convertNumToWordsDecorator(inputArray);
 
-  res.status(200).json({ convertedWords });
+  res.status(200).json({ actualWords, nonWords });
 });
 
 app.get('*', (req, res) => {

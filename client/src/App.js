@@ -21,6 +21,9 @@ export default function App() {
         </h4>
         <T9Form />
         {loading ? console.log('results still loading') : <Results />}
+        <p style={{ color: 'black', fontWeight: 'bold', fontSize: '85%' }}>
+          © Jai Jalah 2021
+        </p>
       </header>
     </div>
   );
