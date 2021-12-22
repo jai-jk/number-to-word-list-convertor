@@ -27,10 +27,50 @@ app.get('/results', (req, res) => {
 
 app.post('/newData', function (req, res) {
   const inputNumber = req.body.input;
+  const inputArray = Array.from(inputNumber.toString()).map(Number);
 
-  console.log(inputNumber);
+  const convertedWords = [];
 
-  res.status(200).json({ number: inputNumber });
+  const hashTable = [
+    ' ',
+    ',.?',
+    'abc',
+    'def',
+    'ghi',
+    'jkl',
+    'mno',
+    'pqrs',
+    'tuv',
+    'wxyz',
+  ];
+
+  const words = ['jai', 'hi'];
+
+  const convertNumToWords = (inputArray, currIndex, convertedWord) => {
+    if (currIndex === inputArray.length) {
+      convertedWords.push(convertedWord.join(''));
+      return;
+    }
+
+    for (let i = 0; i < hashTable[inputArray[currIndex]].length; i++) {
+      convertedWord.push(hashTable[inputArray[currIndex]][i]);
+      convertNumToWords(inputArray, currIndex + 1, convertedWord);
+
+      convertedWord.pop();
+
+      if (inputArray[currIndex] === 0 || inputArray[currIndex] === 1) {
+        return;
+      }
+    }
+  };
+
+  const convertNumToWordsDecorator = (numbers) => {
+    convertNumToWords(numbers, 0, []);
+  };
+
+  convertNumToWordsDecorator(inputArray);
+
+  res.status(200).json({ convertedWords });
 });
 
 app.get('*', (req, res) => {
