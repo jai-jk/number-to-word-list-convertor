@@ -14,7 +14,7 @@ const dictionary = dictionaryModule.dictionaryArray;
 
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: PORT,
     credentials: true,
   })
 );
