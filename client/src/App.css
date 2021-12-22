@@ -9,9 +9,8 @@
   font-size: calc(10px + 2vmin);
   font-family: 'Lato', sans-serif;
   color: #70163c;
-}
-
-.App-header {
+  min-width: 100%;
+  min-height: 100%;
 }
 
 h1 {
@@ -22,9 +21,4 @@ h1 {
   /* width: 50%; */
   /* margin-top: 3%; */
   text-align: center;
-}
-
-.submit-button {
-  /* margin-top: 2%; */
-  /* width: 50%; */
 }

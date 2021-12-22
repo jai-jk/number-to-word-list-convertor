@@ -2,7 +2,7 @@ const express = require('express');
 const logger = require('morgan');
 const cors = require('cors');
 const path = require('path');
-const dictionaryModule = require('../util/dictionary');
+const dictionaryModule = require('../utils/dictionary');
 
 const PORT = process.env.port || 3001;
 
@@ -22,6 +22,8 @@ app.use(
 const dictionary = dictionaryModule.dictionaryArray;
 
 app.get('/*', (req, res) => {
+  res.status(200);
+
   res.sendFile(path.resolve(__dirname, 'client/build', 'index.html'));
 });
 

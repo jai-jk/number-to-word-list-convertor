@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+
 import '../App.css';
+import { ResultsModal } from './ResultsModal';
+
 import { OutlinedInput, Button } from '@mui/material';
 import TranslateIcon from '@mui/icons-material/Translate';
-import { Results } from './Results';
 
 export const T9Form = () => {
   const [input, setInput] = useState('');
@@ -61,9 +63,8 @@ export const T9Form = () => {
           Convert
           <TranslateIcon style={{ marginLeft: '2%' }} />
         </Button>
+        {result === null ? null : <ResultsModal data={result} />}
       </form>
-      {console.log(result)}
-      {result === null ? null : <Results data={result} />}
     </div>
   );
 };
