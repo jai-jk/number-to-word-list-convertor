@@ -6,7 +6,7 @@ React, Redux, Express and Node app - converts a given numeric string into a list
 
 ## Demo
 
-[Demo](/Users/JaiJk/Projects/number-to-word-list-convertor/translat9r-demo.mov)
+translat9r-demo.mov
 
 ### Why and How
 
