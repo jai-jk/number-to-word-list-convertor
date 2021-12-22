@@ -1,19 +1,19 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "TranslaT9r",
+  "name": "TranslaT9r",
   "icons": [
     {
-      "src": "icon.svg",
+      "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "icon.svg",
+      "src": "favicon.ico",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "icon.svg",
+      "src": "favicon.ico",
       "type": "image/png",
       "sizes": "512x512"
     }
