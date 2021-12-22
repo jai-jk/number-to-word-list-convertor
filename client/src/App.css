@@ -1,8 +1,5 @@
-.App {
+.app-container {
   text-align: center;
-}
-
-.App-header {
   background-color: #307351;
   min-height: 100vh;
   display: flex;
@@ -12,6 +9,9 @@
   font-size: calc(10px + 2vmin);
   font-family: 'Lato', sans-serif;
   color: #70163c;
+}
+
+.App-header {
 }
 
 h1 {

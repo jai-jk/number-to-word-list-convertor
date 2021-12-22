@@ -8,10 +8,10 @@ const PORT = process.env.port || 3001;
 
 const app = express();
 
-const dictionary = dictionaryModule.dictionaryArray;
-
 app.use(express.static(path.resolve(__dirname, 'client/build')));
-
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(
   cors({
     origin: PORT,
@@ -19,21 +19,18 @@ app.use(
   })
 );
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+const dictionary = dictionaryModule.dictionaryArray;
 
-app.get('/results', (req, res) => {
-  console.log('received');
-  res.json({ message: 'results go here' });
+app.get('/*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client/build', 'index.html'));
 });
 
 app.post('/numberSubmitted', function (req, res) {
   const inputNumber = req.body.input;
   const inputArray = Array.from(inputNumber.toString()).map(Number);
 
-  const actualWords = [];
-  const nonWords = [];
+  const definedWords = [];
+  const undefinedWords = [];
 
   const hashTable = [
     ' ',
@@ -53,9 +50,9 @@ app.post('/numberSubmitted', function (req, res) {
       const newWord = convertedWord.join('');
 
       if (dictionary.includes(newWord)) {
-        actualWords.push(newWord);
+        definedWords.push(newWord);
       } else {
-        nonWords.push(newWord);
+        undefinedWords.push(newWord);
       }
       return;
     }
@@ -78,11 +75,7 @@ app.post('/numberSubmitted', function (req, res) {
 
   convertNumToWordsDecorator(inputArray);
 
-  res.status(200).json({ actualWords, nonWords });
-});
-
-app.get('/*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client/build', 'index.html'));
+  res.status(200).json({ definedWords, undefinedWords });
 });
 
 app.listen(PORT, () => {
