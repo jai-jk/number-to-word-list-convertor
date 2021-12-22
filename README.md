@@ -6,6 +6,7 @@ React, Redux, Express and Node app - converts a given numeric string into a list
 
 ## Demo
 
+![Translat9r Demo](translat9r-demo-gif.gif) <br>
 https://vimeo.com/659245138
 
 ### Why and How
