@@ -34,15 +34,22 @@ To access locally:
 3. Start the React app: Open another terminal and navigate to the parent folder once more, type in `cd number-to-word-list-convertor/client && npm i && npm start`
 4. Try the app out by visiting `http://localhost:3000/` in your browser!
 
+## Features
+
+- Single Page App.
+- Enter a number into the textbox and a modal pops up with all of the possible words that number combination could produce within the T9 model.
+- Words are matched according to a collection of the 500 most common words in the English Language, and any words generated that match to those are displayed. All of the other possible words are also displayed.
+- Users can only enter numbers and the textfield is required - a flash notice is triggered if a user tries to circumvent either process.
+
 ### Dependencies
 
-Server Dependencies:
+Server-Side Dependencies:
 
 - Cors
 - Express
 - Morgan
 
-Client Dependencies:
+Client-Side Dependencies:
 
 - emotion/react
 - emotion/styled
