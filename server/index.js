@@ -10,7 +10,7 @@ const app = express();
 
 const dictionary = dictionaryModule.dictionaryArray;
 
-// app.use(express.static(path.resolve(__dirname, 'client/build')));
+app.use(express.static(path.resolve(__dirname, 'client/build')));
 
 app.use(
   cors({
@@ -81,7 +81,7 @@ app.post('/numberSubmitted', function (req, res) {
   res.status(200).json({ actualWords, nonWords });
 });
 
-app.get('*', (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'client/build', 'index.html'));
 });
 
