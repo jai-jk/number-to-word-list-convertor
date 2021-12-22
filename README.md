@@ -2,7 +2,7 @@
 
 ### What
 
-React, Redux, Express and Node app - converts a given numeric string into a list of corresponding words in the style of [T9](<https://en.wikipe.ia.org/wiki/T9_(predictive_text)>) / [Phonewords](https://en.wikipedia.org/wiki/Phoneword).
+React, Express and Node app - converts a given numeric string into a list of corresponding words in the style of [T9](<https://en.wikipe.ia.org/wiki/T9_(predictive_text)>) / [Phonewords](https://en.wikipedia.org/wiki/Phoneword).
 
 ## Demo
 
