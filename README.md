@@ -45,11 +45,11 @@ To run locally:
 
 - Break backend code into functional components
 - A More accessible and generally improved UI and UX
-   - Scalability for multiple screen sizes (with ems and rems, breakpoints & media queries, etc)
-   - Ease of use for all types of users (https://www.dreamhost.com/blog/make-your-website-accessible/)
    - Improvements to the modal
       - Close and Refresh functionality (X button, Escape keyDown, fluid refreshing)
       - Increase Width and improve Design
+   - Scalability for multiple screen sizes (with ems and rems, breakpoints & media queries, etc)
+   - Ease of use for all types of users (https://www.dreamhost.com/blog/make-your-website-accessible/)
    - Refactor Styles
 - A functioning keyboard on the brick phone.
 - Deployment to Heroku or AWS.
