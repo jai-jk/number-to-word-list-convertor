@@ -41,12 +41,19 @@ To run locally:
 - Words are matched according to a collection of the 500 most common words in the English Language, and any words generated that match to those are displayed. All of the other possible words are also displayed.
 - Users can only enter numbers and the textfield is required - a flash notice is triggered if a user tries to circumvent either process.
 
-## Improvements I would have loved to make if I'd had more time
+## Roadmap
 
-- A More accessible and generally improved UI and UX - scalability for multiple screen sizes (with ems and rems, breakpoints & media queries, etc); ease of use for all types of users; improvements to the modal-close/refresh functionality (colours, design, fluidity and functionality); refactoring of css and styles into external sheets wherever possible, etc.
-- A functioning keyboard on the brick phone - what a missed opportunity, argh!!
-- Deployment to Heroku - just couldn't get it working in time =(.
-- Unit, Functional, Feature and E2E Tests with Jest and Cypress (TDD from the start would have been even better).
+- Break backend code into functional components
+- A More accessible and generally improved UI and UX
+   - Scalability for multiple screen sizes (with ems and rems, breakpoints & media queries, etc)
+   - Ease of use for all types of users (https://www.dreamhost.com/blog/make-your-website-accessible/)
+   - Improvements to the modal
+      - Close and Refresh functionality (X button, Escape keyDown, fluid refreshing)
+      - Increase Width and improve Design
+   - Refactor Styles
+- A functioning keyboard on the brick phone.
+- Deployment to Heroku or AWS.
+- Unit, Functional, Feature and E2E Tests with Jest and Cypress.
 - Migration to TypeScript.
 
 ### Dependencies
