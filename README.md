@@ -7,7 +7,6 @@ React, Express and Node app - converts a given numeric string into a list of cor
 ## Demo
 
 ![Translat9r Demo](translat9r-demo-gif.gif) <br>
-https://vimeo.com/659245138
 
 **Currently Developed and optimised for a 1440 \* 700 screen - more accessibility coming soon**
 
